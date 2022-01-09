@@ -2,14 +2,21 @@ import "./App.css";
 import Header from "./components/header";
 import Home from "./pages/home";
 import Footer from "./components/footer/index";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import AddExpense from "./pages/add-expense";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/add-expense" element={<AddExpense />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

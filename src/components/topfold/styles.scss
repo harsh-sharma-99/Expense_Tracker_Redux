@@ -35,3 +35,18 @@
     padding: 10px;
   }
 }
+
+.add-topfold {
+  display: flex;
+  justify-content: space-between;
+  height: 34px;
+}
+
+.add-topfold-button {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin: 5px;
+  }
+}

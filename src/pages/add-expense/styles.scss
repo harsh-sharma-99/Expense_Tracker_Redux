@@ -1,0 +1,17 @@
+.add-topfold-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 50%;
+}
+@media only screen and (max-width: 1024px) {
+  .add-topfold-wrapper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .add-topfold-wrapper {
+    width: 100%;
+  }
+}
