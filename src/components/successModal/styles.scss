@@ -1,0 +1,39 @@
+.inner-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.added-image {
+  width: 400px;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.button-text {
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .added-image {
+    width: 360px;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .added-image {
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .added-image {
+    width: 200px;
+  }
+}
