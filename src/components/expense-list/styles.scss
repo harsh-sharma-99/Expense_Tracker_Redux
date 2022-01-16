@@ -1,0 +1,17 @@
+.expense-list {
+  margin: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.empty-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty-list-image {
+  width: 400px;
+}

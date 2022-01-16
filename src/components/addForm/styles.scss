@@ -7,6 +7,7 @@
   padding: 20px;
   margin-top: 10px;
   min-height: 60vh;
+  background-color: aqua;
 }
 
 .add-form-item {
@@ -14,5 +15,52 @@
   width: 70%;
   padding: 4px;
   border-radius: 6px;
-  background-color: #ffffff;
+  background-color: white;
+
+  .field-wrapper {
+    display: flex;
+  }
+
+  label {
+    font-weight: bold;
+    background-color: rgb(233, 225, 225);
+  }
+
+  input {
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 70%;
+  }
 }
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .category {
+    position: relative;
+    width: 40%;
+  }
+  .category-dropdown {
+    margin: 12px 0;
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .dropdown-arrow {
+      float: right;
+      display: flex;
+      font-size: 30px;
+    }
+  }
+}
+// .category-item-conatiner {
+//   display: flex;
+//   flex-direction: column;
+// }

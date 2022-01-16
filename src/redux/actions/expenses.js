@@ -1,9 +1,9 @@
 import { DELETE_EXPENSE } from "../action-types/expenses";
-import AddExpense from "./../../pages/add-expense/index";
+import { ADD_EXPENSE } from "./../action-types/expenses";
 
 export const addExpense = (data) => {
   return {
-    type: AddExpense,
+    type: ADD_EXPENSE,
     data,
   };
 };

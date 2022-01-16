@@ -17,11 +17,11 @@ const SuccessModal = ({ openModal, setOpenModal }) => {
       borderRadius: "12px",
     },
   };
-  console.log(openModal);
   return (
     <div>
       <Modal
         isOpen={openModal}
+        ariaHideApp={false}
         style={customStyles}
         onRequestClose={() => setOpenModal(false)}
       >

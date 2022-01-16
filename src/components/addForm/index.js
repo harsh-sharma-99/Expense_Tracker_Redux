@@ -30,7 +30,6 @@ const AddForm = () => {
 
   //on selecting a category from dropdown
   const handleCategory = (category) => {
-    console.log(category.title);
     setCategory(category);
     setCartegorgyOpen(false);
   };
@@ -54,6 +53,9 @@ const AddForm = () => {
     };
     dispatch(addExpense(data));
     setOpenModal(true);
+    setTitle("");
+    setAmount("");
+    setCategory("");
   };
 
   return (
@@ -62,53 +64,57 @@ const AddForm = () => {
       <SuccessModal openModal={openModal} setOpenModal={setOpenModal} />
 
       <div className="add-form-item">
-        <label>Title</label>
-        <input
-          placeholder="Enter title..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <div className="field-wrapper">
+          <label>Title:</label>
+          <input
+            placeholder="Enter title..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
       </div>
       <div className="add-form-item">
-        <label>Amount</label>
-        <input
-          placeholder="Enter amount..."
-          value={amount}
-          onChange={(e) => handleAmount(e)}
-        />
+        <div className="field-wrapper">
+          <label>Amount:</label>
+          <input
+            placeholder="Enter amount..."
+            value={amount}
+            onChange={(e) => handleAmount(e)}
+          />
+        </div>
       </div>
-      <div className="add-form-dropdown">
+      <div className="category-container">
         <div className="category">
           <div className="category-dropdown">
             <label>{category ? category?.title : "Category"}</label>
             <RiArrowDropDownLine
-              style={{ fontSize: "30px" }}
+              className="dropdown-arrow"
               onClick={() => setCartegorgyOpen(!cartegorgyOpen)}
             />
-            {cartegorgyOpen && (
-              <div className="category-item-conatiner">
-                {dropdownCategory?.map((category) => {
-                  return (
-                    <div
-                      key={category.id}
-                      onClick={() => handleCategory(category)}
-                      className="categorty-item"
-                      style={{
-                        borderRight: `5px solid ${category.color}`,
-                      }}
-                    >
-                      <label>{category.title}</label>
-                      <img
-                        style={{ width: "25px" }}
-                        src={category.icon}
-                        alt={category.title}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            )}
           </div>
+          {cartegorgyOpen && (
+            <div className="category-item-conatiner">
+              {dropdownCategory?.map((category) => {
+                return (
+                  <div
+                    key={category.id}
+                    onClick={() => handleCategory(category)}
+                    className="categorty-item"
+                    style={{
+                      borderRight: `5px solid ${category.color}`,
+                    }}
+                  >
+                    <label>{category.title}</label>
+                    <img
+                      style={{ width: "25px" }}
+                      src={category.icon}
+                      alt={category.title}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
       <div className="add-form-submit-button">
